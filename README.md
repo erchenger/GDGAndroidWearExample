@@ -1,3 +1,10 @@
+Android Wear sample app. The app:
+
+1. Schdules an alarm to run every 15 mins
+2. Makes a network request to get a json object from Dropbox
+3. Makes an Android Wear and Android notfication with two actions
+4. Process the actions and dismisses the notifications 
+
 
 To run the sample:
 
