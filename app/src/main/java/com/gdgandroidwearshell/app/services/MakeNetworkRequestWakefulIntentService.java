@@ -30,6 +30,9 @@ public class MakeNetworkRequestWakefulIntentService extends IntentService {
     public static final String EXTRA_IDENTIFIER_EMAIL = "EXTRA_IDENTIFIER_EMAIL";
     public static final int NOTIFICATION_ID = 133713;
 
+    private static final int CALL_REQ_CODE = 1;
+    private static final int EMAIL_REQ_CODE = 2;
+
     public MakeNetworkRequestWakefulIntentService() {
         super("MakeNetworkRequestWakefulIntentService");
     }
@@ -93,9 +96,7 @@ public class MakeNetworkRequestWakefulIntentService extends IntentService {
 
         intent.putExtra(EXTRA_IDENTIFIER_CALL, phone);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
-
-        pendingIntent.cancel();
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), CALL_REQ_CODE, intent, PendingIntent.FLAG_ONE_SHOT);
 
         return pendingIntent;
     }
@@ -105,9 +106,7 @@ public class MakeNetworkRequestWakefulIntentService extends IntentService {
 
         intent.putExtra(EXTRA_IDENTIFIER_EMAIL, email);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
-
-        pendingIntent.cancel();
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), EMAIL_REQ_CODE, intent, PendingIntent.FLAG_ONE_SHOT);
 
         return pendingIntent;
     }

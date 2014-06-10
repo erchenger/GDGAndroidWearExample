@@ -62,6 +62,6 @@ public class ProcessActionIntentService extends IntentService {
         Uri uri = Uri.parse(uriText);
         send.setData(uri);
 
-        startActivity(Intent.createChooser(send, "Email"));
+        startActivity(Intent.createChooser(send, "Email").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 }
