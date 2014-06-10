@@ -16,6 +16,8 @@ public class AlarmScheduler {
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
 
+        pendingIntent.cancel();
+
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, AlarmManager.INTERVAL_FIFTEEN_MINUTES, AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
     }
 

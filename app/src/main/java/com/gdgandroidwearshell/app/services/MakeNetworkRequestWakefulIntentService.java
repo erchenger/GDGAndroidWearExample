@@ -93,7 +93,9 @@ public class MakeNetworkRequestWakefulIntentService extends IntentService {
 
         intent.putExtra(EXTRA_IDENTIFIER_CALL, phone);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
+
+        pendingIntent.cancel();
 
         return pendingIntent;
     }
@@ -104,6 +106,8 @@ public class MakeNetworkRequestWakefulIntentService extends IntentService {
         intent.putExtra(EXTRA_IDENTIFIER_EMAIL, email);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+
+        pendingIntent.cancel();
 
         return pendingIntent;
     }

@@ -37,7 +37,6 @@ public class ProcessActionIntentService extends IntentService {
     }
 
     private void makeCallIfPhoneExists(Intent intent) {
-
         if (!intent.hasExtra(MakeNetworkRequestWakefulIntentService.EXTRA_IDENTIFIER_CALL)) {
             return;
         }
