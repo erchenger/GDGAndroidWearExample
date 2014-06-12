@@ -52,7 +52,7 @@ public class MakeNetworkRequestWakefulIntentService extends IntentService {
     }
 
     private Mom getMomFromServer() {
-        String momString = getJsonFromServer("https://www.dropbox.com/meta_dl/eyJzdWJfcGF0aCI6ICIiLCAidGVzdF9saW5rIjogZmFsc2UsICJzZXJ2ZXIiOiAiZGwuZHJvcGJveHVzZXJjb250ZW50LmNvbSIsICJpdGVtX2lkIjogbnVsbCwgImlzX2RpciI6IGZhbHNlLCAidGtleSI6ICJxdGIyY2k4eDFmbzVqanEifQ/AANUUXmOb07sduUfP0vu9It2qnI8VnijAztsQXwuYEZ1Mg?dl=1");
+        String momString = getJsonFromServer("https://www.dropbox.com/s/qtb2ci8x1fo5jjq/mom.json?dl=1");
 
         Gson gson = new GsonBuilder().create();
 
